@@ -22,5 +22,12 @@ describe('example spec', () => {
     //Input mobile phone number
     cy.contains('Mobile').should('exist')
     cy.get('[id="userNumber"').type('0123456789')
+
+    //Input DOB
+    cy.contains('Date of Birth').should('exist')
+    cy.get('input[id="dateOfBirthInput"]').click()
+    cy.get('select[class="react-datepicker__month-select"]').select('January').should('have.value', '0')
+    cy.get('select[class="react-datepicker__year-select"]').select('2000').should('have.value', '2000')
+    cy.get('[aria-label="Choose Saturday, January 1st, 2000"]').click()
   })
 })
