@@ -6,20 +6,20 @@ describe('example spec', () => {
     cy.visit('https://demoqa.com/automation-practice-form')
     cy.contains('Practice Form').should('exist')
 
-    //Input name
+    //Input Name
     cy.contains('Name').should('exist')
-    cy.get('[id="firstName"]').type('John')
-    cy.get('[id="lastName"]').type('Doe')
+    cy.get('[id="firstName"]').type('Firstname')
+    cy.get('[id="lastName"]').type('Lastname')
 
-    //Input email
+    //Input Email
     cy.contains('Email').should('exist')
-    cy.get('[id="userEmail"]').type('johndoe@test.email')
+    cy.get('[id="userEmail"]').type('flname@email.test')
 
-    //Choose gender
+    //Choose Gender
     cy.contains('Gender').should('exist')
     cy.get('label[for="gender-radio-1"]').click()
 
-    //Input mobile phone number
+    //Input Phone number
     cy.contains('Mobile').should('exist')
     cy.get('[id="userNumber"').type('0123456789')
 
@@ -30,11 +30,19 @@ describe('example spec', () => {
     cy.get('select[class="react-datepicker__year-select"]').select('2000').should('have.value', '2000')
     cy.get('[aria-label="Choose Saturday, January 1st, 2000"]').click()
 
-    //Select subjects
+    //Select Subjects
     cy.contains('Subjects').should('exist')
     cy.get('[id="subjectsContainer"]').click().type('English{enter}')
     cy.get('[id="subjectsContainer"]').click().type('History{enter}')
     cy.get('[id="subjectsContainer"]').click().type('Arts{enter}')
     cy.get('[id="subjectsContainer"]').click().type('Social Studies{enter}')
+
+    //Check Hobbies
+    cy.contains('Hobbies').should('exist')
+    cy.get('label[for="hobbies-checkbox-2"]').click()
+    cy.get('label[for="hobbies-checkbox-3"]').click()
+
+    //Upload the Picture
+    cy.get('input[id="uploadPicture"]').selectFile('testpicture.jpeg')
   })
 })
