@@ -21,7 +21,7 @@ describe('example spec', () => {
 
     //Input Phone number
     cy.contains('Mobile').should('exist')
-    cy.get('[id="userNumber"').type('0123456789')
+    cy.get('[id="userNumber"]').type('0123456789')
 
     //Select DOB
     cy.contains('Date of Birth').should('exist')
@@ -44,5 +44,9 @@ describe('example spec', () => {
 
     //Upload the Picture
     cy.get('input[id="uploadPicture"]').selectFile('testpicture.jpeg')
+
+    //Input Address
+    cy.contains('Current Address').should('exist')
+    cy.get('[id="currentAddress"]').type('123 Street, 45 Apartment')
   })
 })
