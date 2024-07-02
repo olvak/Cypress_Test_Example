@@ -48,5 +48,12 @@ describe('example spec', () => {
     //Input Address
     cy.contains('Current Address').should('exist')
     cy.get('[id="currentAddress"]').type('123 Street, 45 Apartment')
+
+    //Select State and City
+    cy.contains('State and City').should('exist')
+    cy.get('div[id="state"]').click()
+    cy.contains('Haryana').click()
+    cy.get('div[id="city"]').click()
+    cy.contains('Panipat').click()
   })
 })
