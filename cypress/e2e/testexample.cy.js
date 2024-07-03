@@ -55,5 +55,10 @@ describe('example spec', () => {
     cy.contains('Haryana').click()
     cy.get('div[id="city"]').click()
     cy.contains('Panipat').click()
+
+    //Send form
+    cy.contains('Submit').should('exist')
+    cy.get('button[id="submit"]').click()
+    cy.contains('Thanks for submitting the form').should('exist')
   })
 })
