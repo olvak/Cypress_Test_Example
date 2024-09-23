@@ -63,5 +63,8 @@ describe('example spec', () => {
 
     //Take a screenshot of the form
     cy.screenshot('send-form')
+
+    //Exit form modal window
+    cy.get('div[class="modal-header"]').type('{esc}');
   })
 })
